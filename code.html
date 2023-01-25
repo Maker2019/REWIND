@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Cding Project By Maker Athian</title>
+    <title>REWIND: A Cding Project By Maker Athian</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
     <!-- === Nav Section ====-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logo.png" class="d-inline-block align-text-top" width="30" height="24">     APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="img/logo.png" class="d-inline-block align-text-top" width="30" height="24">     REWIND</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,10 +63,38 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        // Call Hello World
-                        function HelloWorld(){
-                            alert("Hello World");
-                        }
+    // Get the String from the page.
+    // Controll function
+    function getValue(){
+        document.getElementById("alert").classList.add("invisible");
+        let userString = document.getElementById("userString").value;
+        let revString = reverseString(userString);
+        displayString(revString);
+    }
+
+    //Reverse the string
+    // Logic function.
+    function reverseString(userString){
+        // Create empty array.
+        let revString = [];
+
+        // reverse a string using a for loop.
+        for (let index = userString.length - 1; index >= 0; index--){
+            revString += userString[index];
+        }
+        // Return reverse string.
+        return revString;
+    }
+
+    //Display the reverse string to the user.
+    // View Function.
+    function displayString(revstring){
+        //Write message to the page
+        document.getElementById("msg").innerHTML =
+        `Your string reversed is: ${revstring}`;
+        //Show the alert box
+        document.getElementById("alert").classList.remove("invisible");
+    }
                     </code>
                     </pre>
                 </div>
